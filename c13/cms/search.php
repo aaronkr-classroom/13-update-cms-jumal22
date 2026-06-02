@@ -3,7 +3,7 @@ declare(strict_types = 1);                                // Use strict types
 require 'includes/database-connection.php';               // Create PDO object
 require 'includes/functions.php';                         // Include functions
 
-$term  = filter_input(INPUT_GET, 'term');                 // Get search term
+$term  = filter_input(INPUT_GET, 'term') ?? '';                 // Get search term
 $show  = filter_input(INPUT_GET, 'show', FILTER_VALIDATE_INT) ?? 3; // Limit
 $from  = filter_input(INPUT_GET, 'from', FILTER_VALIDATE_INT) ?? 0; // Offset
 $count = 0;                                               // Set count to 0
